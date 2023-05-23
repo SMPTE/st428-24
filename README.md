@@ -6,7 +6,11 @@ Please consult [CONTRIBUTING.md](./CONTRIBUTING.md), [CONFIDENTIALITY.md](./CONF
 
 ## Reporting issues
 
-Please report issues at <https://github.com/SMPTE/st428-24/issues>.
+Issues should be reported at <https://github.com/SMPTE/st428-24/issues>.
+
+## Contributing
+
+The draft standard is accessible to SMPTE Standards Community members at <https://github.com/SMPTE/st428-24-private>.
 
 ## Project details
 
