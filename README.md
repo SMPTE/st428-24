@@ -1,4 +1,8 @@
-# ST 428-24 D-Cinema Distribution Master — Packed Image
+# ST 428-24 D-Cinema Distribution Master — Packed Image 1ED (1st Edition)
+
+Public CD of [SMPTE ST 428-24 1ED](27c-st-428-24-cd-2023-06-28-pub)
+
+This document is made available for a public review period ending no earlier than `2023-12-29`, and no later than `2024-06-28`.
 
 _This repository is public._ 
 
