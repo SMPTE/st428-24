@@ -8,11 +8,13 @@
   <meta itemprop="pubPart" content="24">
   <meta itemprop="pubState" content="pub">
   <meta itemprop="pubStage" content="CD">
+  <meta itemprop="pubConfidential" content="no">
   <meta itemprop="pubTC" content="27C">
-  <meta itemprop="pubDateTime" content="2023-06-28">
+  <meta itemprop="pubSuiteTitle" content="D-Cinema Distribution Master">
+  <meta itemprop="pubDateTime" content="2024-03-14">
   <!-- <meta itemprop="pubRevisionOf" content="SMPTE ST XXXX-Y:ZZZZ" /> -->
-  <title>D-Cinema Distribution Master — Packed Image</title>
-<link type="image/png" rel="icon" href="/home/runner/work/st428-24-private/st428-24-private/tooling/static/smpte-icon.png"><style>html {
+  <title>Packed Image</title>
+<link type="image/png" rel="icon" href="static/smpte-icon.png"><style>html {
   font-size: calc(1.1 * 1em);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
@@ -35,6 +37,10 @@ h1 {
   font-weight: bold;
 }
 
+#doc-number-block {
+  margin-bottom: 2rem;
+}
+
 #revision-text {
   font-size: 1rem;
   text-align: right;
@@ -45,31 +51,30 @@ h1 {
   font-size: 1.3rem;
   text-transform: uppercase;
   font-weight: bold;
-  margin-top: 2rem;
 }
 
+#long-pub-stage {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 1rem;
+}
 
 #doc-status {
   font-size: 1rem;
-  font-weight: bold;
-  font-style: italic;
   text-transform: capitalize;
-}
-
-#doc-dates {
-  font-size: 0.8rem;
-  font-style: italic;
-}
-
-#doc-sponsor {
-  font-size: 0.8rem;
-  font-style: italic;
 }
 
 #smpte-logo {
   float: right;
   width: 200px;
   padding-left: 1rem;
+}
+
+#doc-version-string {
+  color: #606060;
+  font-size: 0.8em;
 }
 
 /* headers */
@@ -80,7 +85,8 @@ h2 {
   margin-bottom: 0;
   font-size: 1.5rem;
   font-weight: bold;
-  break-after: avoid;
+  break-after: avoid-page;
+  break-inside: avoid-page;
 }
 
 h2 span.heading-label {
@@ -94,7 +100,8 @@ h3 {
   margin-bottom: 0;
   font-size: 1rem;
   font-weight: bold;
-  break-after: avoid;
+  break-after: avoid-page;
+  break-inside: avoid-page;
 }
 
 h3 span.heading-label {
@@ -107,7 +114,8 @@ h4 {
   margin-bottom: 0;
   font-size: 1rem;
   font-weight: bold;
-  break-after: avoid;
+  break-after: avoid-page;
+  break-inside: avoid-page;
 }
 
 h4 span.heading-label {
@@ -119,7 +127,8 @@ h5 {
   margin-top: 1.5em;
   margin-bottom: 0;
   font-size: 1rem;
-  break-after: avoid;
+  break-after: avoid-page;
+  break-inside: avoid-page;
 }
 
 h5 span.heading-label {
@@ -131,18 +140,13 @@ h6 {
   margin-top: 1.5em;
   margin-bottom: 0;
   font-size: 1rem;
-  break-after: avoid;
+  break-after: avoid-page;
+  break-inside: avoid-page;
 }
 
 h6 span.heading-label {
   display: inline-block;
   width: 4rem;
-}
-
-/* generic sections */
-
-section {
-  counter-reset: notes-counter;
 }
 
 /* foreword */
@@ -177,11 +181,22 @@ section.annex > h2 {
   font-weight: normal;
 }
 
+/* definition lists */
+
+dl {
+  margin-left: 1em;
+}
+
 /* terms and definitions */
 
 #sec-terms-and-definitions dd {
   margin-left: 0;
 }
+
+#sec-terms-and-definitions dl {
+  margin-left: 0;
+}
+
 
 dt {
   font-weight: bold;
@@ -197,6 +212,10 @@ dt + dd {
 
 dfn {
   font-style: normal;
+}
+
+dd.term-source {
+  font-size: 0.8rem;
 }
 
 /* quotes */
@@ -281,7 +300,7 @@ table {
   font-size: 0.8rem;
   border-collapse: collapse;
   margin: auto;
-  break-inside: avoid;
+  min-width: 40%;
 }
 
 th, td {
@@ -292,11 +311,50 @@ th, td {
 th {
   background-color: lightgrey;
   font-weight: bold;
+}
+
+thead {
   text-align: center;
 }
 
-tr th {
+tbody {
   text-align: left;
+}
+
+td.center-cell {
+  text-align: center;
+}
+
+table.col-1-center tr td:nth-child(1) {
+  text-align: center;
+}
+
+table.col-2-center tr td:nth-child(2) {
+  text-align: center;
+}
+
+table.col-3-center tr td:nth-child(3) {
+  text-align: center;
+}
+
+table.col-4-center tr td:nth-child(4) {
+  text-align: center;
+}
+
+table.col-5-center tr td:nth-child(5) {
+  text-align: center;
+}
+
+table.col-6-center tr td:nth-child(6) {
+  text-align: center;
+}
+
+table.col-7-center tr td:nth-child(7) {
+  text-align: center;
+}
+
+table.col-8-center tr td:nth-child(8) {
+  text-align: center;
 }
 
 table > caption {
@@ -305,12 +363,16 @@ table > caption {
   font-weight: bold;
   font-size: 0.8rem;
   text-align: center;
-  break-after: avoid;
-  break-inside: avoid;
+  break-after: avoid-page;
+  break-inside: avoid-page;
 }
 
-tbody, tr, thead, th {
-  break-inside: avoid;
+table, tr, thead, tbody, tfoot {
+  break-inside: avoid-page;
+}
+
+thead, thead tr {
+  break-after: avoid-page;
 }
 
 /* images */
@@ -331,8 +393,8 @@ figcaption {
   font-weight: bold;
   font-size: 0.8rem;
   text-align: center;
-  break-before: avoid;
-  break-inside: avoid;
+  break-before: avoid-page;
+  break-inside: avoid-page;
 }
 
 figure {
@@ -415,8 +477,10 @@ code:hover {
 /* warning */
 
 #sec-draft-warning {
+  margin-top: 2rem;
   padding: 1rem;
   border: 2px lightblue solid;
+  text-align: justify;
 }
 
 /* print media */
@@ -440,8 +504,23 @@ code:hover {
     string-set: doc-copyright content(text);
   }
 
+  #long-pub-stage {
+    string-set: doc-pub-stage content(text);
+  }
+
+  #sec-elements a {
+    color: currentColor;
+    text-decoration: none;
+    pointer-events: none;
+    cursor: default;
+  }
+
   @page:first {
     @top-right {
+      content: "";
+    }
+
+    @top-left {
       content: "";
     }
   }
@@ -452,6 +531,15 @@ code:hover {
       width: 20rem;
       font-size: 10px;
       font-weight: bold;
+    }
+
+    @top-left {
+      content: string(doc-pub-stage);
+      width: 20rem;
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: red;
     }
 
     @bottom-left {
@@ -499,6 +587,7 @@ code:hover {
 <script src="https://w3c.github.io/htmldiff-nav/index.js"></script></head>
 <body>
 <section class="unnumbered" id="sec-front-matter">
+<div id="doc-number-block">
 <div id="doc-designator" itemscope="itemscope" itemtype="http://purl.org/dc/elements/1.1/">
 <span itemprop="publisher">
 SMPTE
@@ -516,15 +605,17 @@ ST
 24
 </span>
 </div>
+</div>
+<div id="long-pub-stage">
+<ins class="diff-new">Committee
+Draft
+</ins></div><img id="smpte-logo" src="static/smpte-logo.png" alt="SMPTE logo">
 <div id="long-doc-type">
-<del class="diff-old">WD
+<del class="diff-old">CD
 </del>
-<ins class="diff-chg">CD
-</ins>
 SMPTE
 Standard
 </div>
-<img id="smpte-logo" src="static/smpte-logo.png" alt="SMPTE logo">
 <h1>
 D-Cinema
 Distribution
@@ -536,12 +627,80 @@ Image
 <div id="doc-status">
 Approved
 -
-<del class="diff-old">2023-06-12
+<del class="diff-old">2023-06-28
 </del>
-<ins class="diff-chg">2023-06-28
+<ins class="diff-chg">2024-03-14
 </ins>
 </div>
 <hr>
+<div id="sec-draft-warning">
+<strong>
+<ins class="diff-chg">Warning:
+</ins></strong><ins class="diff-chg">
+This
+document
+is
+an
+unpublished
+work
+under
+development
+and
+shall
+not
+be
+referred
+to
+as
+a
+SMPTE
+Standard,
+Recommended
+Practice,
+or
+Engineering
+Guideline.
+It
+is
+distributed
+for
+review
+and
+comment;
+distribution
+does
+not
+constitute
+publication.
+Recipients
+of
+this
+document
+are
+strongly
+encouraged
+to
+submit,
+with
+their
+comments,
+notification
+of
+any
+relevant
+patent
+rights
+of
+which
+they
+are
+aware
+and
+to
+provide
+supporting
+documentation.
+</ins></div>
 </section>
 <section id="sec-toc" class="unnumbered">
 <h2>
@@ -631,24 +790,25 @@ files
 Annex
 A
 Sample
-Codestreams
+<del class="diff-old">Codestreams
 (informative)
-</a>
-</li>
-<li>
-<a href="#sec-media-type-reg">
 Annex
 B
 Media
 type
 registration
+</del>
+<ins class="diff-chg">packed
+images
+</ins>
 (informative)
 </a>
 </li>
 <li>
 <a href="#sec-elements">
-Annex
+<del class="diff-old">Annex
 C
+</del>
 Additional
 elements
 </a>
@@ -836,10 +996,7 @@ Technology
 Committee
 27C.
 </p>
-<div id="sec-draft-warning">
-<strong>
-Warning:
-</strong>
+<del class="diff-old">Warning:
 This
 document
 is
@@ -904,17 +1061,17 @@ to
 provide
 supporting
 documentation.
-</div>
+</del>
 <p>
 <span id="copyright-text">
 Copyright
 ©
 <span id="doc-copyright-year">
-2023
-</span>
-SMPTE
+2024
+<del class="diff-old">SMPTE
+</del>
 </span>,
-45
+<del class="diff-old">45
 Hamilton
 Ave.,
 White
@@ -923,6 +1080,45 @@ NY
 10601,
 (914)
 761-1100.
+</del>
+<ins class="diff-chg">Society
+of
+Motion
+Picture
+and
+Television
+Engineers
+</ins></span>.<ins class="diff-chg">
+All
+rights
+reserved.
+No
+part
+of
+this
+material
+may
+be
+reproduced,
+by
+any
+means
+whatsoever,
+without
+the
+prior
+written
+permission
+of
+the
+Society
+of
+Motion
+Picture
+and
+Television
+Engineers.
+</ins>
 </p>
 </section>
 <section id="sec-introduction" class="unnumbered">
@@ -935,7 +1131,10 @@ Introduction
 <p>
 <em>
 This
-section
+<del class="diff-old">section
+</del>
+<ins class="diff-chg">clause
+</ins>
 is
 entirely
 informative
@@ -1342,7 +1541,10 @@ except:
 the
 Introduction,
 any
-section
+<del class="diff-old">section
+</del>
+<ins class="diff-chg">clause
+</ins>
 explicitly
 labeled
 as
@@ -1779,23 +1981,38 @@ ST
 and
 </li>
 <li>
-contains,
+<del class="diff-old">contains,
+</del>
+<ins class="diff-chg">includes,
+</ins>
 in
-the
+<del class="diff-old">the
+</del>
+<ins class="diff-chg">its
+</ins>
 main
 header,
-one
+<del class="diff-old">one
+</del>
+<ins class="diff-chg">zero
+</ins>
 or
-more
+<del class="diff-old">more
 COM
 markers
 where
 exactly
+</del>
 one
-of
+<del class="diff-old">of
 these
+</del>
 COM
-markers
+<del class="diff-old">markers
+</del>
+<ins class="diff-chg">marker
+that
+</ins>
 conforms
 to
 <a href="#table-com-value">
@@ -1868,9 +2085,15 @@ i
 </tbody>
 </table>
 <p class="note">
+<span class="heading-label">
 NOTE
+<span class="heading-number">
 1
-—
+<del class="diff-old">—
+</del>
+</span>
+<ins class="diff-chg">—⁠
+</ins></span>
 The
 contents
 of
@@ -1898,6 +2121,28 @@ ST
 </code>.
 </p>
 <p>
+<ins class="diff-new">One
+COM
+marker
+that
+conforms
+to
+</ins><a href="#table-com-value"><ins class="diff-new">
+Table
+1
+</ins></a><ins class="diff-new">
+should
+be
+present
+in
+the
+main
+header
+of
+the
+packed
+image.
+</ins></p><p>
 RPCL
 progression
 order
@@ -1923,9 +2168,15 @@ packed
 images.
 </p>
 <p class="note">
+<span class="heading-label">
 NOTE
+<span class="heading-number">
 2
-—
+<del class="diff-old">—
+</del>
+</span>
+<ins class="diff-chg">—⁠
+</ins></span>
 Pcap
 <sup>
 15
@@ -1963,9 +2214,15 @@ decoding
 speeds.
 </p>
 <p class="note">
+<span class="heading-label">
 NOTE
+<span class="heading-number">
 3
-—
+<del class="diff-old">—
+</del>
+</span>
+<ins class="diff-chg">—⁠
+</ins></span>
 The
 RPCL
 progression
@@ -1991,9 +2248,15 @@ partial
 codestream.
 </p>
 <p class="note">
+<span class="heading-label">
 NOTE
+<span class="heading-number">
 4
-—
+<del class="diff-old">—
+</del>
+</span>
+<ins class="diff-chg">—⁠
+</ins></span>
 The
 constraints
 of
@@ -2157,20 +2420,39 @@ RFC
 5234
 </a>.
 </p>
-<pre>file-name = [sequence-name "."] frame-number  extension
+<del class="diff-old">file-name = [sequence-name "."] frame-number  extension
+</del>
+<pre>file-name = [sequence-name "."] frame-number suffix
 sequence-name = *(ALPHA / DIGIT / "_" / "-" / ".")
 frame-number = 1*%d49-57
-extension
+<del class="diff-old">extension
+</del>
+<ins class="diff-chg">suffix
+</ins>
 =
-".pdc"
+<del class="diff-old">".pdc"
+</del>
+<ins class="diff-chg">".pdc.j2c"
+</ins>
 </pre>
 <div class="example">
+<span class="heading-label">
 EXAMPLE
-—
-<pre>Your_Movie_R1_SCOPE.000192.pdc
+<del class="diff-old">—
+Your_Movie_R1_SCOPE.000192.pdc
 Your_Movie_R1_SCOPE.000193.pdc
+</del>
+<span class="heading-number">
+</span>
+<ins class="diff-chg">—⁠
+</ins></span><pre>Your_Movie_R1_SCOPE.000192.pdc.j2c<ins class="diff-chg">
+Your_Movie_R1_SCOPE.000193.pdc.j2c
+</ins>
 ...
-Your_Movie_R1_SCOPE.028223.pdc
+<del class="diff-old">Your_Movie_R1_SCOPE.028223.pdc
+</del>
+<ins class="diff-chg">Your_Movie_R1_SCOPE.028223.pdc.j2c
+</ins>
 </pre>
 </div>
 <p>
@@ -2307,9 +2589,15 @@ display
 order.
 </p>
 <p class="note">
+<span class="heading-label">
 NOTE
+<span class="heading-number">
 1
-—
+<del class="diff-old">—
+</del>
+</span>
+<ins class="diff-chg">—⁠
+</ins></span>
 <code>
 frame-number
 </code>
@@ -2358,9 +2646,15 @@ reel
 1.
 </p>
 <p class="note">
+<span class="heading-label">
 NOTE
+<span class="heading-number">
 2
-—
+<del class="diff-old">—
+</del>
+</span>
+<ins class="diff-chg">—⁠
+</ins></span>
 This
 file
 naming
@@ -2378,20 +2672,42 @@ RP
 </a>
 </p>
 <p class="note">
+<span class="heading-label">
 NOTE
+<span class="heading-number">
 3
-—
+<del class="diff-old">—
+</del>
+</span>
+<ins class="diff-chg">—⁠
+</ins></span>
 The
-<code>.pdc
+<del class="diff-old">.pdc
+</del>
+<code>
+<ins class="diff-chg">pdc
+</ins>
 </code>
+<ins class="diff-new">token
+in
+the
+</ins>
 file
-extension
+<del class="diff-old">extension
 is
 used
 instead
 of
-<code>.j2c
+.j2c
+</del>
+<ins class="diff-chg">name
+</ins><code><ins class="diff-chg">
+suffix
+</ins>
 </code>
+<ins class="diff-new">is
+intended
+</ins>
 to
 differentiate
 files
@@ -2664,7 +2980,10 @@ Except
 for
 their
 respective
-extensions,
+<del class="diff-old">extensions,
+</del>
+<ins class="diff-chg">suffixes,
+</ins>
 the
 filenames
 of
@@ -2689,7 +3008,11 @@ A
 </span>
 <br>
 Sample
-Codestreams
+<del class="diff-old">Codestreams
+</del>
+<ins class="diff-chg">packed
+images
+</ins>
 (informative)
 <a class="heading-link" href="#sec-sample-codestreams">
 🔗
@@ -2703,6 +3026,10 @@ A.1
 lists
 sample
 files
+<ins class="diff-new">containing
+packed
+images
+</ins>
 generated
 by
 encoding
@@ -2732,37 +3059,33 @@ containing
 packed
 images.
 </caption>
-<thead>
-<tr>
-<th>
-File
-</th>
-<th>
+<del class="diff-old">File
 Encoder
-</th>
-<th>
 Method
 of
 generation
-</th>
-</tr>
-</thead>
+</del>
 <tbody>
 <tr>
-<td>
+<th rowspan="2" style="width: 10%">
 <a href="#element-b">
 Element
 b
 </a>
+</th>
+<td style="width: 10%">
+<ins class="diff-new">Tool
+</ins>
 </td>
-<td>
+<td style="width: 80%">
 <a href="https://kakadusoftware.com/documentation-downloads/" class="ext-ref">
 https://kakadusoftware.com/documentation-downloads/
 </a>
 </td>
+</tr>
+<tr>
 <td>
-<code>
-kdu_compress
+<del class="diff-old">kdu_compress
 -i
 build/2K_sample.tiff
 -o
@@ -2777,6 +3100,14 @@ ORGgen_tlm=6
 -fprec
 12M
 Cprecincts=\{256,256\},\{256,256\},\{256,256\},\{256,256\},\{256,256\},\{256,256\},\{128,128\}
+</del>
+<ins class="diff-chg">Method
+of
+generation
+</ins></td>          <td><pre>kdu_compress -i $SRC_FILE -o $KDU_J2C Creversible=yes Corder=RPCL \<ins class="diff-chg">
+  Cblk="{32,128}" Cmodes=HT ORGtparts=R Clevels=5 ORGgen_tlm=6 -fprec 12M \
+  Cprecincts="{256,256},{256,256},{256,256},{256,256},{256,256},{128,128}" \
+</ins>
 -com
 "SMPTE
 DCDM
@@ -2788,31 +3119,33 @@ in
 SMPTE
 ST
 428-1"
-</code>
+</pre>
 </td>
 </tr>
-</tbody>
-</table>
-</section>
-<section id="sec-media-type-reg" class="annex">
-<h2>
-<span class="heading-label">
-Annex
-<span class="heading-number">
+<tr>
+<th rowspan="2">
+<del class="diff-old">Annex
 B
-</span>
-</span>
-<br>
-Media
+</del>
+<a href="#element-c">
+<ins class="diff-chg">Element
+c
+</ins></a>
+</th>
+<td>
+<ins class="diff-chg">Tool
+</ins></td><td>
+<del class="diff-old">Media
 type
 registration
 (informative)
-<a class="heading-link" href="#sec-media-type-reg">
 🔗
+</del>
+<a href="https://github.com/aous72/OpenJPH" class="ext-ref">
+<ins class="diff-chg">https://github.com/aous72/OpenJPH
+</ins>
 </a>
-</h2>
-<p>
-This
+<del class="diff-old">This
 Annex
 lists
 a
@@ -2822,11 +3155,8 @@ for
 the
 media
 type
-<code>
 image/pdc
-</code>.
-</p>
-<p>
+.
 Many
 protocols
 and
@@ -2843,8 +3173,15 @@ data
 payloads.
 The
 nature
+</del>
+</td>
+</tr>
+<tr>
+<td>
+<ins class="diff-chg">Method
+</ins>
 of
-these
+<del class="diff-old">these
 data
 payloads
 is
@@ -2858,13 +3195,23 @@ media
 type,
 which
 is
+</del>
+<ins class="diff-chg">generation
+</ins></td>          <td><pre>ojph_compress -i $SRC_FILE -o $OJPH_J2C -reversible true -prog_order RPCL \<ins class="diff-chg">
+  -block_size "{128,32}" -num_decomps 5 -tlm_marker true \
+  -precincts "{128,128},{256,256}" -tileparts R -bit_depth 12 \
+-com
+"SMPTE
+DCDM
+X'Y'Z'
+image
+as
+</ins>
 defined
 in
-<a href="#bib-rfc-6838">
-IETF
+<del class="diff-old">IETF
 RFC
 6838
-</a>
 and
 consists
 of
@@ -2879,13 +3226,9 @@ some
 instances,
 optional
 parameters.
-</p>
-<p>
-<a href="#bib-rfc-6838">
 IETF
 RFC
 6838
-</a>
 specifies
 a
 registration
@@ -2927,8 +3270,7 @@ with
 the
 media
 type.
-</p>
-<pre>Type name: image
+Type name: image
 Subtype name: pdc
 Required parameters: None
 Optional parameters: None
@@ -2965,17 +3307,22 @@ Picture
 and
 Television
 Engineers
+</del>
+<ins class="diff-chg">SMPTE
+ST
+428-1"
+</ins>
 </pre>
+</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="sec-elements" class="annex">
+<section id="sec-elements" class="unnumbered">
 <h2>
-<span class="heading-label">
-Annex
-<span class="heading-number">
+<del class="diff-old">Annex
 C
-</span>
-</span>
-<br>
+</del>
 Additional
 elements
 <a class="heading-link" href="#sec-elements">
@@ -3003,9 +3350,28 @@ Sample
 2K
 DCDM
 image
-<a id="element-a" title="Sample 2K DCDM image" href="./elements/2K_sample.00001.zip">
-(link)
+<del class="diff-old">(link)
+</del>
+<ins class="diff-chg">whose
+pixel
+array
+includes
+every
+code
+value
+between
+0
+and
+4095
+(normative).
+file:
+&lt;
+</ins><a id="element-a" title="Sample 2K DCDM image whose pixel array includes every code value between 0 and 4095" href="elements/sample.00000001.tiff.zip"><ins class="diff-chg">
+sample.00000001.tiff.zip
+</ins>
 </a>
+<ins class="diff-new">&gt;.
+</ins>
 </li>
 <li>
 <span class="heading-label">
@@ -3020,9 +3386,33 @@ generated
 using
 Kakadu
 SDK
-<a id="element-b" title="Sample packed image generated using Kakadu SDK" href="./elements/2k_sample_kdu.00001.pdc">
-(link)
+<del class="diff-old">(link)
+</del>
+<ins class="diff-chg">(normative).
+file:
+&lt;
+</ins><a id="element-b" title="Sample packed image generated using Kakadu SDK" href="elements/sample_kdu.0000001.pdc.j2c"><ins class="diff-chg">
+sample_kdu.0000001.pdc.j2c
+</ins></a><ins class="diff-chg">
+&gt;.
+</ins></li><li><span class="heading-label"><span class="heading-number"><ins class="diff-chg">
+c
+</ins></span>.</span><ins class="diff-chg">
+Sample
+packed
+image
+generated
+using
+OpenJPH
+(normative).
+file:
+&lt;
+</ins><a id="element-c" title="Sample packed image generated using OpenJPH" href="elements/sample_ojph.0000001.pdc.j2c"><ins class="diff-chg">
+sample_ojph.0000001.pdc.j2c
+</ins>
 </a>
+<ins class="diff-new">&gt;.
+</ins>
 </li>
 </ol>
 </section>
@@ -3089,13 +3479,9 @@ Part
 High-Throughput
 JPEG
 2000.
-</li>
-<li>
-<cite id="bib-rfc-6838">
-IETF
+<del class="diff-old">IETF
 RFC
 6838
-</cite>
 (BCP
 13),
 Media
@@ -3105,9 +3491,8 @@ and
 Registration
 Procedures.
 url:&nbsp;
-<a href="https://www.rfc-editor.org/rfc/rfc6838" class="ext-ref">
 https://www.rfc-editor.org/rfc/rfc6838
-</a>
+</del>
 </li>
 </ul>
 </section>
