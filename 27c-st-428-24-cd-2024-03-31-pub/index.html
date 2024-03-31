@@ -9,10 +9,11 @@
   <meta itemprop="pubState" content="pub">
   <meta itemprop="pubStage" content="CD">
   <meta itemprop="pubTC" content="27C">
-  <meta itemprop="pubDateTime" content="2023-06-28">
+  <meta itemprop="pubSuiteTitle" content="D-Cinema Distribution Master">
+  <meta itemprop="pubDateTime" content="2024-03-14">
   <!-- <meta itemprop="pubRevisionOf" content="SMPTE ST XXXX-Y:ZZZZ" /> -->
-  <title>D-Cinema Distribution Master — Packed Image</title>
-<link type="image/png" rel="icon" href="/home/runner/work/st428-24-private/st428-24-private/tooling/static/smpte-icon.png"><style>html {
+  <title>Packed Image</title>
+<link type="image/png" rel="icon" href="static/smpte-icon.png"><style>html {
   font-size: calc(1.1 * 1em);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
@@ -35,6 +36,10 @@ h1 {
   font-weight: bold;
 }
 
+#doc-number-block {
+  margin-bottom: 2rem;
+}
+
 #revision-text {
   font-size: 1rem;
   text-align: right;
@@ -45,31 +50,30 @@ h1 {
   font-size: 1.3rem;
   text-transform: uppercase;
   font-weight: bold;
-  margin-top: 2rem;
 }
 
+#long-pub-stage {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 1rem;
+}
 
 #doc-status {
   font-size: 1rem;
-  font-weight: bold;
-  font-style: italic;
   text-transform: capitalize;
-}
-
-#doc-dates {
-  font-size: 0.8rem;
-  font-style: italic;
-}
-
-#doc-sponsor {
-  font-size: 0.8rem;
-  font-style: italic;
 }
 
 #smpte-logo {
   float: right;
   width: 200px;
   padding-left: 1rem;
+}
+
+#doc-version-string {
+  color: #606060;
+  font-size: 0.8em;
 }
 
 /* headers */
@@ -80,7 +84,8 @@ h2 {
   margin-bottom: 0;
   font-size: 1.5rem;
   font-weight: bold;
-  break-after: avoid;
+  break-after: avoid-page;
+  break-inside: avoid-page;
 }
 
 h2 span.heading-label {
@@ -94,7 +99,8 @@ h3 {
   margin-bottom: 0;
   font-size: 1rem;
   font-weight: bold;
-  break-after: avoid;
+  break-after: avoid-page;
+  break-inside: avoid-page;
 }
 
 h3 span.heading-label {
@@ -107,7 +113,8 @@ h4 {
   margin-bottom: 0;
   font-size: 1rem;
   font-weight: bold;
-  break-after: avoid;
+  break-after: avoid-page;
+  break-inside: avoid-page;
 }
 
 h4 span.heading-label {
@@ -119,7 +126,8 @@ h5 {
   margin-top: 1.5em;
   margin-bottom: 0;
   font-size: 1rem;
-  break-after: avoid;
+  break-after: avoid-page;
+  break-inside: avoid-page;
 }
 
 h5 span.heading-label {
@@ -131,18 +139,13 @@ h6 {
   margin-top: 1.5em;
   margin-bottom: 0;
   font-size: 1rem;
-  break-after: avoid;
+  break-after: avoid-page;
+  break-inside: avoid-page;
 }
 
 h6 span.heading-label {
   display: inline-block;
   width: 4rem;
-}
-
-/* generic sections */
-
-section {
-  counter-reset: notes-counter;
 }
 
 /* foreword */
@@ -177,11 +180,22 @@ section.annex > h2 {
   font-weight: normal;
 }
 
+/* definition lists */
+
+dl {
+  margin-left: 1em;
+}
+
 /* terms and definitions */
 
 #sec-terms-and-definitions dd {
   margin-left: 0;
 }
+
+#sec-terms-and-definitions dl {
+  margin-left: 0;
+}
+
 
 dt {
   font-weight: bold;
@@ -197,6 +211,10 @@ dt + dd {
 
 dfn {
   font-style: normal;
+}
+
+dd.term-source {
+  font-size: 0.8rem;
 }
 
 /* quotes */
@@ -281,7 +299,7 @@ table {
   font-size: 0.8rem;
   border-collapse: collapse;
   margin: auto;
-  break-inside: avoid;
+  min-width: 40%;
 }
 
 th, td {
@@ -292,11 +310,50 @@ th, td {
 th {
   background-color: lightgrey;
   font-weight: bold;
+}
+
+thead {
   text-align: center;
 }
 
-tr th {
+tbody {
   text-align: left;
+}
+
+td.center-cell {
+  text-align: center;
+}
+
+table.col-1-center tr td:nth-child(1) {
+  text-align: center;
+}
+
+table.col-2-center tr td:nth-child(2) {
+  text-align: center;
+}
+
+table.col-3-center tr td:nth-child(3) {
+  text-align: center;
+}
+
+table.col-4-center tr td:nth-child(4) {
+  text-align: center;
+}
+
+table.col-5-center tr td:nth-child(5) {
+  text-align: center;
+}
+
+table.col-6-center tr td:nth-child(6) {
+  text-align: center;
+}
+
+table.col-7-center tr td:nth-child(7) {
+  text-align: center;
+}
+
+table.col-8-center tr td:nth-child(8) {
+  text-align: center;
 }
 
 table > caption {
@@ -305,12 +362,16 @@ table > caption {
   font-weight: bold;
   font-size: 0.8rem;
   text-align: center;
-  break-after: avoid;
-  break-inside: avoid;
+  break-after: avoid-page;
+  break-inside: avoid-page;
 }
 
-tbody, tr, thead, th {
-  break-inside: avoid;
+table, tr, thead, tbody, tfoot {
+  break-inside: avoid-page;
+}
+
+thead, thead tr {
+  break-after: avoid-page;
 }
 
 /* images */
@@ -331,8 +392,8 @@ figcaption {
   font-weight: bold;
   font-size: 0.8rem;
   text-align: center;
-  break-before: avoid;
-  break-inside: avoid;
+  break-before: avoid-page;
+  break-inside: avoid-page;
 }
 
 figure {
@@ -415,8 +476,10 @@ code:hover {
 /* warning */
 
 #sec-draft-warning {
+  margin-top: 2rem;
   padding: 1rem;
   border: 2px lightblue solid;
+  text-align: justify;
 }
 
 /* print media */
@@ -440,8 +503,23 @@ code:hover {
     string-set: doc-copyright content(text);
   }
 
+  #long-pub-stage {
+    string-set: doc-pub-stage content(text);
+  }
+
+  #sec-elements a {
+    color: currentColor;
+    text-decoration: none;
+    pointer-events: none;
+    cursor: default;
+  }
+
   @page:first {
     @top-right {
+      content: "";
+    }
+
+    @top-left {
       content: "";
     }
   }
@@ -452,6 +530,15 @@ code:hover {
       width: 20rem;
       font-size: 10px;
       font-weight: bold;
+    }
+
+    @top-left {
+      content: string(doc-pub-stage);
+      width: 20rem;
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: red;
     }
 
     @bottom-left {
@@ -480,17 +567,27 @@ code:hover {
 
 }</style></head>
 
-<body><section class="unnumbered" id="sec-front-matter"><div id="doc-designator" itemscope="itemscope" itemtype="http://purl.org/dc/elements/1.1/">
+<body><section class="unnumbered" id="sec-front-matter"><div id="doc-number-block">
+<div id="doc-designator" itemscope="itemscope" itemtype="http://purl.org/dc/elements/1.1/">
 <span itemprop="publisher">SMPTE</span>&nbsp;<span id="doc-type">ST</span>&nbsp;<span itemprop="doc-number" id="doc-number">428</span>-<span itemprop="doc-part" id="doc-part">24</span></div>
 
-<div id="long-doc-type">CD SMPTE Standard</div>
+</div>
+<div id="long-pub-stage">CONFIDENTIAL Committee Draft</div>
 <img id="smpte-logo" src="static/smpte-logo.png" alt="SMPTE logo">
+<div id="long-doc-type">SMPTE Standard</div>
 <h1>D-Cinema Distribution Master — Packed Image</h1>
-<div id="doc-status">Approved - 2023-06-28</div>
-<hr></section><section id="sec-toc" class="unnumbered"><h2>Table of contents<a class="heading-link" href="#sec-toc">🔗</a></h2><ol><li><a href="#sec-foreword">Foreword</a></li><li><a href="#sec-introduction">Introduction</a></li><li><a href="#sec-scope">1 Scope</a></li><li><a href="#sec-conformance">2 Conformance</a></li><li><a href="#sec-normative-references">3 Normative references</a></li><li><a href="#sec-terms-and-definitions">4 Terms and definitions</a></li><li><a href="#sec-packed-image">5 Packed image</a></li><li><a href="#sec-naming">6 File sequence and naming convention</a></li><li><a href="#sec-digital-leader">7 Digital leader</a></li><li><a href="#sec-tiff-conversion">8 Conversion to and from TIFF files (informative)</a></li><li><a href="#sec-sample-codestreams">Annex A
-Sample Codestreams (informative)</a></li><li><a href="#sec-media-type-reg">Annex B
-Media type registration (informative)</a></li><li><a href="#sec-elements">Annex C
-Additional elements</a></li><li><a href="#sec-bibliography">Bibliography</a></li></ol></section><section id="sec-foreword" class="unnumbered"><h2>Foreword<a class="heading-link" href="#sec-foreword">🔗</a></h2>
+<div id="doc-status">Approved - 2024-03-14</div>
+<hr>
+
+<div id="sec-draft-warning">
+<strong>Warning:</strong> This document is an unpublished work under development and shall not be referred
+to as a SMPTE Standard,
+Recommended Practice, or Engineering Guideline. It is distributed for review and comment; distribution does not constitute
+publication. Recipients of this document are strongly encouraged to submit, with their comments, notification of any relevant
+patent rights of which they are aware and to provide supporting documentation.
+</div>
+</section><section id="sec-toc" class="unnumbered"><h2>Table of contents<a class="heading-link" href="#sec-toc">🔗</a></h2><ol><li><a href="#sec-foreword">Foreword</a></li><li><a href="#sec-introduction">Introduction</a></li><li><a href="#sec-scope">1 Scope</a></li><li><a href="#sec-conformance">2 Conformance</a></li><li><a href="#sec-normative-references">3 Normative references</a></li><li><a href="#sec-terms-and-definitions">4 Terms and definitions</a></li><li><a href="#sec-packed-image">5 Packed image</a></li><li><a href="#sec-naming">6 File sequence and naming convention</a></li><li><a href="#sec-digital-leader">7 Digital leader</a></li><li><a href="#sec-tiff-conversion">8 Conversion to and from TIFF files (informative)</a></li><li><a href="#sec-sample-codestreams">Annex A
+Sample packed images (informative)</a></li><li><a href="#sec-elements">Additional elements</a></li><li><a href="#sec-bibliography">Bibliography</a></li></ol></section><section id="sec-foreword" class="unnumbered"><h2>Foreword<a class="heading-link" href="#sec-foreword">🔗</a></h2>
 <p><a href="https://www.smpte.org">SMPTE (the Society of
 Motion Picture and Television Engineers)</a> is an
 internationally-recognized standards developing organization. Headquartered
@@ -509,17 +606,9 @@ However, attention is drawn to the possibility that some of the elements of this
 SMPTE shall not be held responsible for identifying any or all such patent rights.</p>
 
 <p>This document was prepared by Technology Committee 27C.</p>
-<div id="sec-draft-warning">
-<strong>Warning:</strong> This document is an unpublished, confidential work under development and shall not be referred
-to as a SMPTE Standard,
-Recommended Practice, or Engineering Guideline. It is distributed for review and comment; distribution does not constitute
-publication. Recipients of this document are strongly encouraged to submit, with their comments, notification of any relevant
-patent rights of which they are aware and to provide supporting documentation.
-</div>
 
-
-<p><span id="copyright-text">Copyright © <span id="doc-copyright-year">2023</span> SMPTE</span>, 45 Hamilton Ave., White Plains NY 10601, (914) 761-1100.</p></section>
-  <section id="sec-introduction" class="unnumbered"><h2>Introduction<a class="heading-link" href="#sec-introduction">🔗</a></h2><p><em>This section is entirely informative and does not form an integral part of this Engineering Document.</em></p>
+<p><span id="copyright-text">Copyright © <span id="doc-copyright-year">2024</span>, Society of Motion Picture and Television Engineers</span>. All rights reserved. No part of this material may be reproduced, by any means whatsoever, without the prior written permission of the Society of Motion Picture and Television Engineers.</p></section>
+  <section id="sec-introduction" class="unnumbered"><h2>Introduction<a class="heading-link" href="#sec-introduction">🔗</a></h2><p><em>This clause is entirely informative and does not form an integral part of this Engineering Document.</em></p>
     <p>
       Digital Cinema Distribution Master (DCDM) image essence is regularly
       exchanged between post-production facilities, typically using the
@@ -574,7 +663,7 @@ patent rights of which they are aware and to provide supporting documentation.
     helpful to the user, but not indispensable, and can be removed, changed, or added editorially without
      affecting interoperability. Informative text does not contain any conformance keywords. </p>
 
-  <p>All text in this document is, by default, normative, except: the Introduction, any section explicitly
+  <p>All text in this document is, by default, normative, except: the Introduction, any clause explicitly
   labeled as "Informative" or individual paragraphs that start with "Note:" </p>
 
 <p>The keywords "shall" and "shall not" indicate requirements strictly to be followed in order to conform to the
@@ -626,8 +715,8 @@ document and from which no deviation is permitted.</p>
 
       <li>contains an image whose characteristics conform to <a href="#bib-st-428-1">SMPTE ST 428-1</a>; and</li>
 
-      <li>contains, in the main header, one or more COM markers where exactly
-      one of these COM markers conforms to <a href="#table-com-value">Table 1</a>.</li>
+      <li>includes, in its main header, zero or one COM marker that conforms to
+      <a href="#table-com-value">Table 1</a>.</li>
     </ul>
 
     <table id="table-com-value">
@@ -655,22 +744,25 @@ document and from which no deviation is permitted.</p>
       </tbody>
     </table>
 
-    <p class="note">NOTE 1 — The contents of the Ccom<sup>i</sup> bytes corresponds to
+    <p class="note"><span class="heading-label">NOTE <span class="heading-number">1</span> —⁠ </span>The contents of the Ccom<sup>i</sup> bytes corresponds to
     the string <code>SMPTE DCDM X'Y'Z' image as defined in SMPTE ST 428-1</code>.</p>
+
+    <p>One COM marker that conforms to <a href="#table-com-value">Table 1</a> should be
+    present in the main header of the packed image.</p>
 
     <p>RPCL progression order and Pcap<sup>15</sup> = 1 should be used.</p>
 
     <p><a href="#sec-sample-codestreams">Annex A</a> provides sample packed images.</p>
 
-    <p class="note">NOTE 2 — Pcap<sup>15</sup> = 1 specifies that the High-Throughput
+    <p class="note"><span class="heading-label">NOTE <span class="heading-number">2</span> —⁠ </span>Pcap<sup>15</sup> = 1 specifies that the High-Throughput
     (HT) block coder defined in <a href="#bib-itu-t-814">Rec. ITU-T T.814 | ISO/IEC 15444-15</a> is used. The HT
     block coder significantly improves encoding and decoding speeds.</p>
 
-    <p class="note">NOTE 3 — The RPCL progression order allows decoding of images in
+    <p class="note"><span class="heading-label">NOTE <span class="heading-number">3</span> —⁠ </span>The RPCL progression order allows decoding of images in
     throughput-limited and -varying environments with a single contiguous read
     operation of a partial codestream.</p>
 
-    <p class="note">NOTE 4 — The constraints of <a href="#bib-st-428-1">SMPTE ST 428-1</a> narrow the
+    <p class="note"><span class="heading-label">NOTE <span class="heading-number">4</span> —⁠ </span>The constraints of <a href="#bib-st-428-1">SMPTE ST 428-1</a> narrow the
     constraints of <a href="#bib-st-2067-40">SMPTE ST 2067-40</a>. For example,
     XRsiz<sup>i</sup> = YRsiz<sup>i</sup> = 1 for all components.</p>
 
@@ -695,16 +787,16 @@ document and from which no deviation is permitted.</p>
     <p>The file name of each file of the sequence shall conform to the following
     file-name syntax, expressed using the ABNF rules specified in <a href="#bib-rfc-5234">IETF RFC 5234</a>.</p>
 
-<pre>file-name = [sequence-name "."] frame-number  extension
+<pre>file-name = [sequence-name "."] frame-number suffix
 sequence-name = *(ALPHA / DIGIT / "_" / "-" / ".")
 frame-number = 1*%d49-57
-extension = ".pdc"</pre>
+suffix = ".pdc.j2c"</pre>
 
-<div class="example">EXAMPLE — 
-<pre>Your_Movie_R1_SCOPE.000192.pdc
-Your_Movie_R1_SCOPE.000193.pdc
+<div class="example"><span class="heading-label">EXAMPLE <span class="heading-number"></span> —⁠ </span>
+<pre>Your_Movie_R1_SCOPE.000192.pdc.j2c
+Your_Movie_R1_SCOPE.000193.pdc.j2c
 ...
-Your_Movie_R1_SCOPE.028223.pdc</pre>
+Your_Movie_R1_SCOPE.028223.pdc.j2c</pre>
 </div>
 
     <p>The length of <code>file-name</code> in characters shall not be greater
@@ -727,22 +819,21 @@ Your_Movie_R1_SCOPE.028223.pdc</pre>
     the files shall be in the intended temporal display order.
     </p>
 
-    <p class="note">NOTE 1 — <code>frame-number</code> can be used to represent an offset
+    <p class="note"><span class="heading-label">NOTE <span class="heading-number">1</span> —⁠ </span><code>frame-number</code> can be used to represent an offset
     in frames from the timecode 01:00:00:00. For example, a
     <code>frame-number</code> value of 086400 can correspond to 01:00:00:00 at
     24 frames per second, i.e., the “picture start” frame in the head leader for
     reel 1.
     </p>
 
-    <p class="note">NOTE 2 — This file naming convention is similar to that specified in
+    <p class="note"><span class="heading-label">NOTE <span class="heading-number">2</span> —⁠ </span>This file naming convention is similar to that specified in
     <a href="#bib-rp-428-5">SMPTE RP 428-5</a>
     </p>
 
-    <p class="note">NOTE 3 — The <code>.pdc</code> file extension is used instead of
-      <code>.j2c</code> to differentiate files containing packed images from
-      those containing lossy-coded frames intended to be wrapped into a D-Cinema
-      composition for distribution to theaters.
-    </p>
+    <p class="note"><span class="heading-label">NOTE <span class="heading-number">3</span> —⁠ </span>The <code>pdc</code> token in the file name
+    <code>suffix</code> is intended to differentiate files containing packed
+    images from those containing lossy-coded frames intended to be wrapped into
+    a D-Cinema composition for distribution to theaters.</p>
   </section>
 
   <section id="sec-digital-leader">
@@ -806,109 +897,61 @@ Your_Movie_R1_SCOPE.028223.pdc</pre>
     <a href="#bib-rp-428-5">SMPTE RP 428-5</a>, each 12-bit packed image sample is padded into
     a 16-bit TIFF sample as specified in <a href="#bib-rp-428-5">SMPTE RP 428-5</a>.</p>
 
-    <p>Except for their respective extensions, the filenames of the TIFF and
+    <p>Except for their respective suffixes, the filenames of the TIFF and
     packed image files can be identical.</p>
 
   </section>
 
   <section id="sec-sample-codestreams" class="annex">
-    <h2><span class="heading-label">Annex <span class="heading-number">A</span></span><br>Sample Codestreams (informative)<a class="heading-link" href="#sec-sample-codestreams">🔗</a></h2>
+    <h2><span class="heading-label">Annex <span class="heading-number">A</span></span><br>Sample packed images (informative)<a class="heading-link" href="#sec-sample-codestreams">🔗</a></h2>
 
-    <p><a href="#table-samples">Table A.1</a> lists sample files generated by encoding <a href="#element-a">Element a</a> (a TIFF file) using commonly-available tools.</p>
+    <p><a href="#table-samples">Table A.1</a> lists sample files containing packed images
+    generated by encoding <a href="#element-a">Element a</a> (a TIFF file) using
+    commonly-available tools.</p>
 
     <table id="table-samples">
       <caption><span class="heading-label">Table <span class="heading-number">A.1</span> –⁠ </span>Sample files containing packed images.</caption>
-      <thead>
-        <tr>
-          <th>File</th>
-          <th>Encoder</th>
-          <th>Method of generation</th>
-        </tr>
-      </thead>
       <tbody>
         <tr>
-          <td><a href="#element-b">Element b</a></td>
-          <td><a href="https://kakadusoftware.com/documentation-downloads/" class="ext-ref">https://kakadusoftware.com/documentation-downloads/</a></td>
-          <td><code>
-kdu_compress -i build/2K_sample.tiff -o build/2k_sample.kdu.j2c Creversible=yes
-Corder=RPCL Cblk=\{32,128\} Cmodes=HT ORGtparts=R Clevels=5 ORGgen_tlm=6 -fprec
-12M
-Cprecincts=\{256,256\},\{256,256\},\{256,256\},\{256,256\},\{256,256\},\{256,256\},\{128,128\}
--com "SMPTE DCDM X'Y'Z' image as defined in SMPTE ST 428-1"</code></td>
+          <th rowspan="2" style="width: 10%"><a href="#element-b">Element b</a></th>
+          <td style="width: 10%">Tool</td>
+          <td style="width: 80%"><a href="https://kakadusoftware.com/documentation-downloads/" class="ext-ref">https://kakadusoftware.com/documentation-downloads/</a></td>
+        </tr>
+        <tr>
+          <td>Method of generation</td>
+          <td><pre>kdu_compress -i $SRC_FILE -o $KDU_J2C Creversible=yes Corder=RPCL \
+  Cblk="{32,128}" Cmodes=HT ORGtparts=R Clevels=5 ORGgen_tlm=6 -fprec 12M \
+  Cprecincts="{256,256},{256,256},{256,256},{256,256},{256,256},{128,128}" \
+  -com "SMPTE DCDM X'Y'Z' image as defined in SMPTE ST 428-1"</pre></td>
+        </tr>
+        <tr>
+          <th rowspan="2"><a href="#element-c">Element c</a></th>
+          <td>Tool</td>
+          <td><a href="https://github.com/aous72/OpenJPH" class="ext-ref">https://github.com/aous72/OpenJPH</a></td>
+        </tr>
+        <tr>
+          <td>Method of generation</td>
+          <td><pre>ojph_compress -i $SRC_FILE -o $OJPH_J2C -reversible true -prog_order RPCL \
+  -block_size "{128,32}" -num_decomps 5 -tlm_marker true \
+  -precincts "{128,128},{256,256}" -tileparts R -bit_depth 12 \
+  -com "SMPTE DCDM X'Y'Z' image as defined in SMPTE ST 428-1"</pre></td>
         </tr>
       </tbody>
     </table>
   </section>
 
-  <section id="sec-media-type-reg" class="annex">
-    <h2><span class="heading-label">Annex <span class="heading-number">B</span></span><br>Media type registration (informative)<a class="heading-link" href="#sec-media-type-reg">🔗</a></h2>
-
-    <p>This Annex lists a registration request for the media type
-    <code>image/pdc</code>.</p>
-
-    <p>Many protocols and application programming interfaces (API) are designed
-    to carry arbitrary data payloads. The nature of these data payloads is
-    signalled using a label called a media type, which is defined in <a href="#bib-rfc-6838">IETF RFC 6838</a> and consists of a top-level type, a subtype, and
-    in some instances, optional parameters.</p>
-
-    <p><a href="#bib-rfc-6838">IETF RFC 6838</a> specifies a registration procedure in which
-    the entity who is requesting a media type – and is responsible for defining
-    the underlying data payload – is required to publish a registration request
-    whose content will be associated with the media type.</p>
-
-<pre>Type name: image
-
-Subtype name: pdc
-
-Required parameters: None
-
-Optional parameters: None
-
-Encoding considerations: binary
-
-Notes: Single packed image that conforms to SMPTE ST 428-24.
-
-Security considerations: A packed image consists of a single JPEG 2000
-codestream that contains structures of variable length and has an extensible
-syntax. Both of these aspects present potential security risks for
-implementations. In particular, variable length structures present buffer
-overflow risks and extensible syntax could result in the triggering of adverse
-actions.
-
-Interoperability considerations: The JPEG 2000 codestream of the packed image
-contains a COM marker whose Rcom parameter is 1 and whose payload is the string
-"SMPTE DCDM X'Y'Z' image as defined in SMPTE ST 428-1".
-
-Published specification: SMPTE ST 428-24
-
-Applications: Multimedia and scientific
-
-Fragment identifier considerations: None
-
-Restrictions on usage: None
-
-Additional information:
-    Magic number(s): See interoperability considerations.
-    File extension(s): pdc
-    Macintosh File Type Code(s): N/A
-    Object Identifiers: N/A
-
-Intended usage: COMMON
-
-Notes: None
-
-Contact name: SMPTE Standards Vice-President
-Contact email address: svp@smpte.org
-Author/Change controller: Society of Motion Picture and Television Engineers</pre>
-  </section>
-
-  <section id="sec-elements" class="annex"><h2><span class="heading-label">Annex <span class="heading-number">C</span></span><br>Additional elements<a class="heading-link" href="#sec-elements">🔗</a></h2><p>This annex lists non-prose elements of this document.</p>
+  <section id="sec-elements" class="unnumbered"><h2>Additional elements<a class="heading-link" href="#sec-elements">🔗</a></h2><p>This annex lists non-prose elements of this document.</p>
     <ol>
       <li>
-        <span class="heading-label"><span class="heading-number">a</span>.</span> Sample 2K DCDM image <a id="element-a" title="Sample 2K DCDM image" href="./elements/2K_sample.00001.zip">(link)</a>
+        <span class="heading-label"><span class="heading-number">a</span>.</span> Sample 2K DCDM image whose pixel array includes
+        every code value between 0 and 4095 (normative). file: &lt;<a id="element-a" title="Sample 2K DCDM image whose pixel array includes
+        every code value between 0 and 4095" href="elements/sample.00000001.tiff.zip">sample.00000001.tiff.zip</a>&gt;.
       </li>
       <li>
-        <span class="heading-label"><span class="heading-number">b</span>.</span> Sample packed image generated using Kakadu SDK <a id="element-b" title="Sample packed image generated using Kakadu SDK" href="./elements/2k_sample_kdu.00001.pdc">(link)</a>
+        <span class="heading-label"><span class="heading-number">b</span>.</span> Sample packed image generated using Kakadu SDK (normative). file: &lt;<a id="element-b" title="Sample packed image generated using Kakadu SDK" href="elements/sample_kdu.0000001.pdc.j2c">sample_kdu.0000001.pdc.j2c</a>&gt;.
+      </li>
+      <li>
+        <span class="heading-label"><span class="heading-number">c</span>.</span> Sample packed image generated using OpenJPH (normative). file: &lt;<a id="element-c" title="Sample packed image generated using OpenJPH" href="elements/sample_ojph.0000001.pdc.j2c">sample_ojph.0000001.pdc.j2c</a>&gt;.
       </li>
     </ol>
   </section>
@@ -924,10 +967,6 @@ Author/Change controller: Society of Motion Picture and Television Engineers</pr
       <li><cite id="bib-itu-t-814">Rec. ITU-T T.814 | ISO/IEC 15444-15</cite>,
       Information technology — JPEG 2000 image coding system — Part 15:
       High-Throughput JPEG 2000.</li>
-
-      <li><cite id="bib-rfc-6838">IETF RFC 6838</cite> (BCP 13), Media Type
-      Specifications and Registration Procedures.
-      url:&nbsp;<a href="https://www.rfc-editor.org/rfc/rfc6838" class="ext-ref">https://www.rfc-editor.org/rfc/rfc6838</a></li>
     </ul>
   </section>
 
