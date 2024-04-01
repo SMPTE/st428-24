@@ -1,9 +1,9 @@
-# ST 428-24 D-Cinema Distribution Master — Packed Image 1ED (1st Edition)
+# ST 428-24 D-Cinema Distribution Master — Packed Image
 
-Second Public CD of SMPTE ST 428-24 1ED:
-* [PDF](./27c-st-428-24-cd-2024-03-31-pub/SMPTE%20ST%20428-24%20D-Cinema%20Distribution%20Master%20-%20Packed%20Image.pdf)
-* [HTML](./27c-st-428-24-cd-2024-03-31-pub/index.html)
-* [Redline to first Public CD](./27c-st-428-24-cd-2024-03-31-pub/pub-rl.html)
+Second Public CD of SMPTE ST 428-24 1ED (1st Edition):
+* [PDF](https://doc.smpte-doc.org/st428-24-private/20240314-cd/SMPTE%20ST%20428-24%20D-Cinema%20Distribution%20Master%20-%20Packed%20Image.pdf)
+* [HTML](https://doc.smpte-doc.org/st428-24-private/20240314-cd/)
+* [Redline to first Public CD](https://doc.smpte-doc.org/st428-24-private/20240314-cd/pub-rl.html)
 
 This document is made available for a public review period ending no earlier than `2023-12-29`, and no later than `2024-06-28`.
 
@@ -14,7 +14,7 @@ Please consult [CONTRIBUTING.md](./CONTRIBUTING.md), [CONFIDENTIALITY.md](./CONF
 ## Changes since the first Public CD
 
 * COM marker signaling is now optional
-* Samples have been improved
+* Packed image samples have been improved
 * File name suffix changed to `.pdc.j2c`
 
 ## Reporting issues
