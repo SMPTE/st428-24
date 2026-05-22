@@ -2,21 +2,7 @@
 
 _This repository is public._ 
 
-<!-- PCD-INFO:START -->
-
-Second Public CD of SMPTE ST 428-24 1ED (1st Edition):
-* [PDF](https://doc.smpte-doc.org/st428-24-private/20240314-cd/SMPTE%20ST%20428-24%20D-Cinema%20Distribution%20Master%20-%20Packed%20Image.pdf)
-* [HTML](https://doc.smpte-doc.org/st428-24-private/20240314-cd/)
-* [Redline to first Public CD](https://doc.smpte-doc.org/st428-24-private/20240314-cd/pub-rl.html)
-
-This document is made available for a public review period ending no earlier than 2023-12-29, and no later than 2024-06-28.
-
-## Changes since the first Public CD
-
-* COM marker signaling is now optional
-* Packed image samples have been improved
-* File name suffix changed to `.pdc.j2c`
-<!-- PCD-INFO:END -->
+<!-- PCD-INFO:START --><!-- PCD-INFO:END -->
 
 ## Notices
 
