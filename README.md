@@ -4,6 +4,10 @@ _This repository is public._
 
 <!-- PCD-INFO:START --><!-- PCD-INFO:END -->
 
+## Published engineering document
+
+The latest published edition of the engineering document is available at <https://pub.smpte.org/latest/st428-24/>.
+
 ## Notices
 
 Please consult [CONTRIBUTING.md](./CONTRIBUTING.md), [CONFIDENTIALITY.md](./CONFIDENTIALITY.md) and [PATENTS.md](./PATENTS.md) for
